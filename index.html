@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Assignment</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+	<style type="text/css">
+
+	</style>
+</head>
+<body>
+	<div class="container">
+			<div class="row">
+				<div class="col">
+					<table class="table">
+					  <thead>
+					    <tr>
+					      <th scope="col">Subject</th>
+					      <th scope="col">Score</th>
+					      <th scope="col">Grade</th>
+					    </tr>
+					  </thead>
+					  <tbody class="body">
+					    <tr>
+					      <td>English</td>
+					      <td>
+					      	<input type="number" name="english" id="eng">
+					      </td>
+					      <td>
+					      	<input type="text" name="grade" id="engrade">
+					      </td>
+					    </tr>
+					    <tr>
+					      <td>Maths</td>
+					      <td>
+					      	<input type="number" name="maths" id="math">
+					      </td>
+					      <td>
+					      	<input type="text" name="mathsgrade" id="mathgrade">
+					      </td>
+					    </tr>
+					    <tr>
+					      <td>Chemistry</td>
+					      <td>
+					      	<input type="number" name="chemistry" id="chem">
+					      </td>
+					      <td>
+					      	<input type="text" name="chemgrade"	id="chemgrade">
+					      </td>
+					    </tr>
+					     <tr>
+					      <td>Biology</td>
+					      <td>
+					      	<input type="number" name="biology" id="bio">
+					      </td>
+					      <td>
+					      	<input type="text" name="biograde" id="biograde">
+					      </td>
+					    </tr>
+					     <tr>
+					      <td>French</td>
+					      <td>
+					      	<input type="number" name="french" id="fren">
+					      </td>
+					      <td>
+					      	<input type="text" name="frenchgrade" id="frengrade">
+					      </td>
+					    </tr>
+					  </tbody>
+					</table>
+					<div>
+						<button class="btn btn-primary" type="button" onclick="gradeScore()">Get Result</button>
+					</div>
+					<div>
+						<h5> TOTAL</h5>
+						<p id="total"></p>
+					</div>
+					<div>
+						<h5> Average</h5>
+						<p id="average"></p>
+					</div>
+					<div>
+						<h5> Remarks</h5>
+						<p id="remark"></p>
+					</div>
+
+
+				</div>
+			</div>		
+	</div>
+
+<script type="text/javascript">
+
+	function gradeScore(){
+	var englishScore = document.getElementById('eng').value;
+	var mathScore = document.getElementById('math').value;
+	var chemistryScore = document.getElementById('chem').value;
+	var biologyScore = document.getElementById('bio').value;
+	var frenchScore = document.getElementById('fren').value;
+
+	document.getElementById('engrade').value =gradeSheet(englishScore);
+	document.getElementById('mathgrade').value = gradeSheet(mathScore);
+	document.getElementById('chemgrade').value = gradeSheet(chemistryScore);
+	document.getElementById('biograde').value = gradeSheet(biologyScore);
+	document.getElementById('frengrade').value = gradeSheet(frenchScore);
+
+	var totalScore = Number(englishScore) + Number(mathScore) + Number(chemistryScore) + Number(biologyScore) + Number(frenchScore);
+	document.getElementById('total').innerHTML = totalScore;
+
+		function gradeSheet(score){
+			if (score < 40){
+				return 'F'
+			}else if(score >=40 && score <45){
+				return 'E'
+			}else if(score >=45 && score <50){
+				return 'D'
+			}else if(score >=50 && score <60){
+				return 'C'
+			}else if(score >=60 && score <69){
+				return 'B'
+			}else if(score >=70){
+					return 'A'
+				}
+			
+			}
+
+
+	}
+
+</script>
+</body>
+</html>
