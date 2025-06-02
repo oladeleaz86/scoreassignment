@@ -25,43 +25,43 @@
 					    <tr>
 					      <td>English</td>
 					      <td>
-					      	<input type="number" name="english" id="eng">
+					      	<input type="number" name="english" id="eng" class="scorelist">
 					      </td>
 					      <td>
-					      	<input type="text" name="grade" id="engrade">
+					      	<input type="text" name="grade" id="engrade" class="gradelist">
 					      </td>
 					    </tr>
 					    <tr>
 					      <td>Maths</td>
 					      <td>
-					      	<input type="number" name="maths" id="math">
+					      	<input type="number" name="maths" id="math" class="scorelist">
 					      </td>
 					      <td>
-					      	<input type="text" name="mathsgrade" id="mathgrade">
+					      	<input type="text" name="mathsgrade" id="mathgrade" class="gradelist">
 					      </td>
 					    </tr>
 					    <tr>
 					      <td>Chemistry</td>
 					      <td>
-					      	<input type="number" name="chemistry" id="chem">
+					      	<input type="number" name="chemistry" id="chem" class="scorelist">
 					      </td>
 					      <td>
-					      	<input type="text" name="chemgrade"	id="chemgrade">
+					      	<input type="text" name="chemgrade"	id="chemgrade" class="gradelist">
 					      </td>
 					    </tr>
 					     <tr>
 					      <td>Biology</td>
 					      <td>
-					      	<input type="number" name="biology" id="bio">
+					      	<input type="number" name="biology" id="bio" class="scorelist">
 					      </td>
 					      <td>
-					      	<input type="text" name="biograde" id="biograde">
+					      	<input type="text" name="biograde" id="biograde" class="gradelist">
 					      </td>
 					    </tr>
 					     <tr>
 					      <td>French</td>
 					      <td>
-					      	<input type="number" name="french" id="fren">
+					      	<input type="number" name="french" id="fren" class="scorelist">
 					      </td>
 					      <td>
 					      	<input type="text" name="frenchgrade" id="frengrade">
@@ -108,6 +108,11 @@
 	var totalScore = Number(englishScore) + Number(mathScore) + Number(chemistryScore) + Number(biologyScore) + Number(frenchScore);
 	document.getElementById('total').innerHTML = totalScore;
 
+	var totalSubject = 5;
+	var average = totalScore / totalSubject;
+	document.getElementById('average').innerHTML = average;
+
+
 		function gradeSheet(score){
 			if (score < 40){
 				return 'F'
@@ -124,7 +129,7 @@
 				}
 			
 			}
-
+			
 
 	}
 
